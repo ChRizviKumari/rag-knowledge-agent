@@ -1,0 +1,242 @@
+[
+  {
+    "id": "q01",
+    "question": "How many server failures can a five-node Raft cluster tolerate?",
+    "source": "raft_consensus",
+    "answer_contains": [
+      "tolerates two failures"
+    ]
+  },
+  {
+    "id": "q02",
+    "question": "What makes a Raft follower start an election?",
+    "source": "raft_consensus",
+    "answer_contains": [
+      "randomized election timeout"
+    ]
+  },
+  {
+    "id": "q03",
+    "question": "When is a log entry considered committed?",
+    "source": "raft_consensus",
+    "answer_contains": [
+      "stored on a majority"
+    ]
+  },
+  {
+    "id": "q04",
+    "question": "What stops a node with an outdated log from becoming leader?",
+    "source": "raft_consensus",
+    "answer_contains": [
+      "at least as up to date"
+    ]
+  },
+  {
+    "id": "q05",
+    "question": "Why does adding a server to a hash ring remap so few keys?",
+    "source": "consistent_hashing",
+    "answer_contains": [
+      "roughly 1/n"
+    ]
+  },
+  {
+    "id": "q06",
+    "question": "Why give each server many virtual nodes?",
+    "source": "consistent_hashing",
+    "answer_contains": [
+      "uneven load"
+    ]
+  },
+  {
+    "id": "q07",
+    "question": "How many virtual nodes per server are typical?",
+    "source": "consistent_hashing",
+    "answer_contains": [
+      "between 100 and 200"
+    ]
+  },
+  {
+    "id": "q08",
+    "question": "What is a preference list in Dynamo-style systems?",
+    "source": "consistent_hashing",
+    "answer_contains": [
+      "preference list"
+    ]
+  },
+  {
+    "id": "q09",
+    "question": "What does consistency mean in the CAP theorem?",
+    "source": "cap_theorem",
+    "answer_contains": [
+      "linearizability"
+    ]
+  },
+  {
+    "id": "q10",
+    "question": "How do AP systems handle divergent replicas after a partition?",
+    "source": "cap_theorem",
+    "answer_contains": [
+      "reconciles divergent replicas"
+    ]
+  },
+  {
+    "id": "q11",
+    "question": "What does PACELC add on top of CAP?",
+    "source": "cap_theorem",
+    "answer_contains": [
+      "latency and consistency"
+    ]
+  },
+  {
+    "id": "q12",
+    "question": "Which techniques resolve conflicting writes in eventually consistent stores?",
+    "source": "cap_theorem",
+    "answer_contains": [
+      "vector clocks"
+    ]
+  },
+  {
+    "id": "q13",
+    "question": "How does the cache-aside pattern work?",
+    "source": "caching_strategies",
+    "answer_contains": [
+      "populates the cache"
+    ]
+  },
+  {
+    "id": "q14",
+    "question": "What is the danger of write-back caching?",
+    "source": "caching_strategies",
+    "answer_contains": [
+      "risks data loss"
+    ]
+  },
+  {
+    "id": "q15",
+    "question": "How can a popular key expiring overwhelm the database?",
+    "source": "caching_strategies",
+    "answer_contains": [
+      "many requests simultaneously"
+    ]
+  },
+  {
+    "id": "q16",
+    "question": "Which entry does LRU evict?",
+    "source": "caching_strategies",
+    "answer_contains": [
+      "gone unused the longest"
+    ]
+  },
+  {
+    "id": "q17",
+    "question": "Can a message be lost under at-most-once delivery?",
+    "source": "message_queues",
+    "answer_contains": [
+      "can lose it"
+    ]
+  },
+  {
+    "id": "q18",
+    "question": "How is exactly-once processing usually achieved?",
+    "source": "message_queues",
+    "answer_contains": [
+      "idempotent consumers"
+    ]
+  },
+  {
+    "id": "q19",
+    "question": "What limits how many consumers in a group can work in parallel?",
+    "source": "message_queues",
+    "answer_contains": [
+      "number of partitions"
+    ]
+  },
+  {
+    "id": "q20",
+    "question": "What is a dead-letter queue for?",
+    "source": "message_queues",
+    "answer_contains": [
+      "does not block the rest"
+    ]
+  },
+  {
+    "id": "q21",
+    "question": "Why might a read from a follower return stale data?",
+    "source": "database_sharding_replication",
+    "answer_contains": [
+      "followers can lag"
+    ]
+  },
+  {
+    "id": "q22",
+    "question": "What is the drawback of range sharding?",
+    "source": "database_sharding_replication",
+    "answer_contains": [
+      "hot spots"
+    ]
+  },
+  {
+    "id": "q23",
+    "question": "Why is two-phase commit problematic for cross-shard transactions?",
+    "source": "database_sharding_replication",
+    "answer_contains": [
+      "blocks if the coordinator fails"
+    ]
+  },
+  {
+    "id": "q24",
+    "question": "Which HTTP status code signals a client has been rate limited?",
+    "source": "rate_limiting",
+    "answer_contains": [
+      "429"
+    ]
+  },
+  {
+    "id": "q25",
+    "question": "How does a token bucket permit bursts?",
+    "source": "rate_limiting",
+    "answer_contains": [
+      "short bursts"
+    ]
+  },
+  {
+    "id": "q26",
+    "question": "What is the weakness of a fixed window counter?",
+    "source": "rate_limiting",
+    "answer_contains": [
+      "straddling two windows"
+    ]
+  },
+  {
+    "id": "q27",
+    "question": "Where are counters kept when many servers share one rate limit?",
+    "source": "rate_limiting",
+    "answer_contains": [
+      "redis"
+    ]
+  },
+  {
+    "id": "q28",
+    "question": "Why add random jitter to retry delays?",
+    "source": "resilience_patterns",
+    "answer_contains": [
+      "lockstep"
+    ]
+  },
+  {
+    "id": "q29",
+    "question": "What happens in the half-open state of a circuit breaker?",
+    "source": "resilience_patterns",
+    "answer_contains": [
+      "trial calls"
+    ]
+  },
+  {
+    "id": "q30",
+    "question": "What is a bulkhead in resilient system design?",
+    "source": "resilience_patterns",
+    "answer_contains": [
+      "separate thread pools"
+    ]
+  }
+]
